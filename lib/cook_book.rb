@@ -1,3 +1,5 @@
+require 'time'
+
 class CookBook
   attr_reader :recipes
 
@@ -13,7 +15,6 @@ class CookBook
     result = []
     @recipes.each do |recipe|
       recipe.ingredients.each do |ingredient|
-        # require 'pry' ; binding.pry
       result << ingredient.name if !result.include?(ingredient.name)
       end
     end
@@ -21,10 +22,16 @@ class CookBook
   end
 
   def highest_calorie_meal
-    # require 'pry' ; binding.pry
     @recipes.max_by {|recipe| recipe.total_calories}
   end
 
+  def date
+    Time.now.strftime("%m-%d-%Y")
+  end
+
+  def summary
+    array = [Hash.new(0), Hash.new(0)]
+  end
 
 
 end

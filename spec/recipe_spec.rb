@@ -1,6 +1,5 @@
 require './lib/ingredient'
 require './lib/recipe'
-require './lib/cook_book'
 
 RSpec.describe do
   it 'exists' do
@@ -17,7 +16,6 @@ RSpec.describe do
     expect(recipe1.name).to eq("Mac and Cheese")
     expect(recipe1.ingredients_required).to eq({})
   end
-
 
   it 'can add ingredients' do
     recipe1 = Recipe.new("Mac and Cheese")
@@ -58,6 +56,4 @@ RSpec.describe do
     expect(recipe1.total_calories).to eq(440)
     expect(recipe2.total_calories).to eq(675)
   end
-
-
 end

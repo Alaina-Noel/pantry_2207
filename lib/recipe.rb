@@ -1,5 +1,6 @@
 class Recipe
-  attr_reader :name, :ingredients_required
+  attr_reader :name,
+              :ingredients_required
 
   def initialize(name)
     @name = name
@@ -15,14 +16,8 @@ class Recipe
   end
 
   def total_calories
-    amount = 0
-    @ingredients_required.keys.each do |ingredient|
-      amount += ingredient.calories * @ingredients_required[ingredient]
-      # require 'pry' ; binding.pry
-    end
-    amount
+    @ingredients_required.keys.map do |ingredient|
+      ingredient.calories * @ingredients_required[ingredient]
+    end.sum
   end
-
-
-
 end
