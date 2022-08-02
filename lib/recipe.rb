@@ -14,6 +14,15 @@ class Recipe
     @ingredients_required.keys
   end
 
+  def total_calories
+    amount = 0
+    @ingredients_required.keys.each do |ingredient|
+      amount += ingredient.calories * @ingredients_required[ingredient]
+      # require 'pry' ; binding.pry
+    end
+    amount
+  end
+
 
 
 end

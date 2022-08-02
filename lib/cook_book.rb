@@ -8,4 +8,5 @@ class CookBook
   def add_recipe(recipe)
     @recipes << recipe
   end
+
 end
