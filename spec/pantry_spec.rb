@@ -1,13 +1,13 @@
 require './lib/ingredient'
+require './lib/pantry'
 
 RSpec.describe do
   it 'exists' do
-    ingredient1 = Ingredient.new({name: "Cheese", unit: "oz", calories: 50})
-
-    expect(ingredient1).to be_instance_of(Ingredient)
+    pantry = Pantry.new
+    expect(pantry).to be_instance_of(Pantry)
   end
 
-  it 'has attributes' do
+  xit 'has attributes' do
     ingredient1 = Ingredient.new({name: "Cheese", unit: "oz", calories: 50})
 
     expect(ingredient1.name).to eq("Cheese")
